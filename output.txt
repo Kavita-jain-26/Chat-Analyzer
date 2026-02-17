@@ -1,0 +1,62 @@
+  Started conversation: demo_conversation
+
+Starting conversation...
+
+User: Hi, my name is Kavita Jain and I'm a software engineer
+Assistant: Hello Kavita! It's great to meet you. How can I assist you today?
+User: What's my name?
+Assistant: Your name is Kavita Jain. How can I help you further?
+
+User: What's my profession?
+Assistant: You mentioned that you are a software engineer. How can I assist you with your work?
+
+
+============================================================
+Conversation: demo_conversation
+============================================================
+
+Turn 1 (13 tokens)
+   Hi, my name is Kavita Jain and I'm a software engineer
+
+Turn 2 (17 tokens)
+   Hello Kavita! It's great to meet you. How can I assist you today?
+
+Turn 3 (4 tokens)
+   What's my name?
+
+Turn 4 (14 tokens)
+   Your name is Kavita Jain. How can I help you further?
+
+Turn 5 (4 tokens)
+   What's my profession?
+
+Turn 6 (18 tokens)
+   You mentioned that you are a software engineer. How can I assist you with your work?
+
+============================================================
+Total: 6 turns, 70 tokens
+Cost: $0.000016
+============================================================
+
+Conversation Analysis
+Conversation ID: demo_conversation
+Total Turns: 6
+Total Tokens: 70
+Estimated Cost: $0.000016
+Duration: 13.8 seconds
+
+💬 Token Breakdown:
+  User tokens: 21
+  Assistant tokens: 21
+  Average per turn: 11.7 tokens
+
+Token Trend:
+Messages are getting shorter (-69.2%)
+
+Insights:
+Efficient token usage
+
+Most expensive turns:
+  Turn 1: 13 tokens
+  Turn 3: 4 tokens
+Conversation saved: demo_conversation
