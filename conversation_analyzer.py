@@ -206,7 +206,7 @@ class ConversationAnalyzer:
         insights = []
         
         # Basic stats
-        insights.append(f"📊 Conversation Analysis")
+        insights.append(f"Conversation Analysis")
         insights.append(f"Conversation ID: {analysis['conversation_id']}")
         insights.append(f"Total Turns: {analysis['total_turns']}")
         insights.append(f"Total Tokens: {analysis['total_tokens']:,}")
@@ -229,23 +229,23 @@ class ConversationAnalyzer:
             
             if last_turn > first_turn * 1.2:
                 change_pct = ((last_turn/first_turn - 1) * 100)
-                insights.append(f"  ⬆️ Messages are getting longer (+{change_pct:.1f}%)")
+                insights.append(f" Messages are getting longer (+{change_pct:.1f}%)")
             elif last_turn < first_turn * 0.8:
                 change_pct = ((last_turn/first_turn - 1) * 100)
-                insights.append(f"  ⬇️ Messages are getting shorter ({change_pct:.1f}%)")
+                insights.append(f"  Messages are getting shorter ({change_pct:.1f}%)")
             else:
-                insights.append(f"  ➡️ Message length is relatively stable")
+                insights.append(f"  Message length is relatively stable")
         
         # Efficiency insights
-        insights.append(f"\n💡 Insights:")
+        insights.append(f"\n Insights:")
         if analysis['avg_tokens_per_turn'] > 1000:
-            insights.append(f"  ⚠️ High token usage per turn - consider optimizing prompts")
+            insights.append(f"  High token usage per turn - consider optimizing prompts")
         elif analysis['avg_tokens_per_turn'] < 100:
-            insights.append(f"  ✅ Efficient token usage")
+            insights.append(f"  Efficient token usage")
         
         if analysis['total_tokens'] > 4000:
-            insights.append(f"  ⚠️ Conversation exceeds typical context window")
-            insights.append(f"  💡 Consider summarizing old messages")
+            insights.append(f"  Conversation exceeds typical context window")
+            insights.append(f"  Consider summarizing old messages")
         
         return "\n".join(insights)
     
@@ -424,7 +424,6 @@ class ConversationAnalyzer:
         print(f"{'='*60}\n")
         
         for turn in conv["turns"]:
-            role_icon = "👤" if turn["role"] == "user" else "🤖"
             tokens = turn.get("total_tokens", turn["token_count"])
             
             content_preview = turn['content'][:100]
@@ -458,18 +457,18 @@ if __name__ == "__main__":
     
     # Turn 1
     response1 = analyzer.chat_with_analysis("Hi, my name is Kavita Jain and I'm a software engineer")
-    print(f"👤 User: Hi, my name is Kavita Jain and I'm a software engineer")
-    print(f"🤖 Assistant: {response1}\n")
+    print(f"User: Hi, my name is Kavita Jain and I'm a software engineer")
+    print(f"Assistant: {response1}\n")
     
     # Turn 2
     response2 = analyzer.chat_with_analysis("What's my name?")
-    print(f"👤 User: What's my name?")
-    print(f"🤖 Assistant: {response2}\n")
+    print(f" User: What's my name?")
+    print(f"Assistant: {response2}\n")
     
     # Turn 3
     response3 = analyzer.chat_with_analysis("What's my profession?")
-    print(f"👤 User: What's my profession?")
-    print(f"🤖 Assistant: {response3}\n")
+    print(f"User: What's my profession?")
+    print(f"Assistant: {response3}\n")
     
     # Print conversation flow
     analyzer.print_conversation_flow()
@@ -481,10 +480,10 @@ if __name__ == "__main__":
     # Find expensive turns
     expensive = analyzer.find_expensive_turns(top_n=2)
     if expensive:
-        print("\n💰 Most expensive turns:")
+        print("\n Most expensive turns:")
         for turn in expensive:
             print(f"  Turn {turn['turn']}: {turn['total']} tokens")
     
     # Save conversation
     saved_id = analyzer.save_conversation()
-    print(f"\n✅ Conversation saved: {saved_id}")
+    print(f"\n Conversation saved: {saved_id}")
