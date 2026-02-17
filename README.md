@@ -23,12 +23,12 @@ analyzer = ConversationAnalyzer()
 analyzer.start_conversation()
 
 # Chat and it automatically tracks everything
-response = analyzer.chat_with_analysis("Hi, I'm John")
+response = analyzer.chat_with_analysis("Hi, I'm Kv")
 print(response)
 
 # Ask follow-up - it remembers context
 response2 = analyzer.chat_with_analysis("What's my name?")
-print(response2)  # "Your name is John"
+print(response2)  # "Your name is kv"
 
 # See the analysis
 insights = analyzer.generate_insights()
